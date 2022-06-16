@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>TAXI DRIVER KEEPER</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- font -->
+
+    
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid" >
+            <p></p>
+            <img src="img/nav_taxi.png">
+            <a class="navbar-brand" href="index.html">TAXI DRIVER KEEPER</a>
+            <img src="img/nav_taxi.png">
+            <button id="run_btn" onclick="running()" value="off" ><img src="img/interval.png"></button>
+        </div>
+    </nav>
+
+
+    <div class="row mt">
+        <div class="col-lg-5" style="margin : 0px 65px 0 30px;">
+            <div class="centered">
+                <div class="col-lg-3 count border" style="color:white;  background-color: black;"><h1>전체 <hr/> <span class="count" id="count_all">0</span></h1></div>
+                <div class="col-lg-3 safety count"><h1>안전 <hr/> <span class="count" id="count_s">0</span></h1></div>
+                <div class="col-lg-3 warning count" ><h1>주의 <hr/> <span class="count" id="count_w">0</span></h1></div>
+                <div class="col-lg-3 danger count" ><h1>위험 <hr/> <span class="count" id="count_d">0</span></h1></div>
+            </div>
+            <div id="googleMap" style="width: 100%;height: 700px;"></div>
+        </div>
+        <div class="col-lg-6" id="taxi_status">
+
+
+        </div>
+    </div>
+</body>
+
+
+<script src="js/main.js"></script>
+<!-- TODO : google api 입력 필요 -->
+<script src="https://maps.googleapis.com/maps/api/js?key= GOOGLE-API &callback=myMap"></script> 
+<script>
+
+
+
+</script>
+
+
+</html>

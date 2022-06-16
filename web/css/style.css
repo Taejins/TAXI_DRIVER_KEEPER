@@ -1,0 +1,117 @@
+@font-face {
+    font-family: 'EarlyFontDiary';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    font-family: EarlyFontDiary;
+    background-color: rgb(233, 233, 233);
+    color : black;
+}
+.centered {
+    text-align: center;
+  }
+button {
+    border-radius: 10px;
+}
+.yy{
+    background-color:rgb(255, 255, 116)
+}
+
+/* nav bar */
+.navbar{
+    background-color:rgb(255, 255, 116) !important;
+    font-weight: 800;
+    font-family: 'SBAggroB', sans-serif;
+}
+.navbar-brand{
+    font-size: 35px;
+}
+.navbar img{
+    width: auto;
+    height: 50px;
+}
+
+/* 컬러 */
+.danger {
+    background-color: red;
+}
+.warning {
+    background-color: rgb(231, 231, 14);
+}
+.safety {
+    background-color: rgb(0, 187, 0);
+}
+/* 통계판 div */
+div.count {
+    height: 150px;
+    padding: 15px;
+}
+span.count{
+    font-size: 50px; 
+    font-weight: 600;
+}
+.border{
+    border : 2px solid white;
+}
+hr {
+    border-top:2px solid white;
+}
+/* 상황 div */
+div.status {
+    padding: 0px 0px 5px 0px;
+    border:2px solid rgb(233, 233, 233);
+}
+div.status>img{
+    width: 100%; 
+    height: auto; 
+    object-fit: cover;
+}
+div.status h2{
+    font-weight: 700;
+}
+div.mini_status{
+    background-color: black; 
+    border-radius: 10px;
+    color:white
+}
+
+div.mini_status img{
+    width: 30px;
+    height: auto;
+}
+/* detail */
+.detail_scroll{
+    height:200px;
+    overflow: auto;
+    margin-bottom:10px;
+}
+.detail table{
+    font-size: 15px;
+    text-align: center;
+    background-color: white;
+}
+.detail th{
+    background-color: rgb(255, 255, 116);
+    font-size: 20px;
+    position: sticky;
+    top: 0px;
+}
+.detail h1{
+    font-weight: 600;
+}
+
+img.full{
+    width: 100%; 
+    height: auto; 
+    object-fit: cover;
+}

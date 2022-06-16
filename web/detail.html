@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>TAXI DRIVER KEEPER</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- font -->
+
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid" >
+            <button onclick="location.href='index.html'"><img src="img/back.png"></button>
+            <img src="img/nav_taxi.png">
+            <a class="navbar-brand" href="index.html">TAXI DRIVER KEEPER</a>
+            <img src="img/nav_taxi.png">
+            <button id="run_btn" onclick="running()" value="off"><img src="img/interval.png"></button>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row" >
+            <div class="col-lg-6 centered" >
+                <img class="full" id="detail_img" src="defualt_img.png" onerror="this.src='img/default_img.png'">
+                <hr>
+                <div class="detail" style="background-color:grey; ">
+                    <table class="table" style="font-size: 20px; font-weight: 600;">
+                        <tr><td class="yy">택시명</td><td id="taxi_name">로딩 중</td></tr>
+                        <tr><td class="yy">안전 레벨</td><td id="secure_level">로딩 중</td></tr>
+                        <tr><td class="yy">음주 경보</td><td id="alcohol_cur">로딩 중</td></tr>
+                        <tr><td class="yy">소리 경보</td><td id="sound_cur">로딩 중</td></tr>
+                        <tr><td class="yy">폭력 경보</td><td id="motion_cur">로딩 중</td></tr>
+                        <tr><td class="yy">현재 위치</td><td id="loc_cur">로딩 중</td></tr>
+                    </table>
+                </div>
+                
+            </div>
+            <div class="col-lg-6 detail">
+                <h1>O 센서 데이터 로그</h1>
+                <div class="detail_scroll">
+                    <table class="table table-condensed" id="sensor">
+                        <tr>
+                            <th>시간</th>
+                            <th>음주 센서</th>
+                            <th>소음 센서</th>
+                        </tr>
+                        <span id="add"></span>
+                    </table>
+                </div>
+                <h1>O 모션 데이터 로그</h1>
+                <div class="detail_scroll">
+                    <table class="table" id="motion">
+                        <tr>
+                            <th>시간</th>
+                            <th>모션 위험도</th>
+                        </tr>
+                    </table>
+                </div>
+                <h1>O 위험 채증 영상</h1>
+                <div class="detail_scroll">
+                    <table class="table" id="video">
+                        <tr>
+                            <th>파일명</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</body>
+
+<script src="js/detail.js"></script>
+</html>
