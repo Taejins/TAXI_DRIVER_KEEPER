@@ -21,9 +21,13 @@
 ---
 ## 실행방법
 ### - 라즈베리 파이
+#### 1. 모션 인식 모듈 설치
+> Tensorflow Lite, OpenCV, MediaPipe 설치
+#### 2. 파이썬 모듈 설치
+> Multiprocessing, RPI.GPIO, AWSIOT 파이썬 모듈 설치
+#### 3. raspberry_code.py
+> 내부의 IAM 정보 추가, ENDPOINT,CLIENT_ID 정보 입력 
 ``` C
-cd project
-source env/bin/activate  #파이썬 가상환경 실행
 python3 final_test.py #프로그램 실행
 ```
 ### - 웹 서버
