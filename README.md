@@ -13,7 +13,7 @@
 > 택시의 위험도와 내부 영상 모니터링을 통해 위험 상황을 판단해 상황을 인지하고 실시간 위치를 이용하여 빠른 신고 절차로 이어져 상황에 대처할 수 있음
 ---
 ## 요구 기술
-### 1) 폭력 모션 인식
+### 1) Deep Learning
 > Tensorflow Lite, OpenCV, MediaPipe
 ### 2) AWS
 > IoT Core, LAMBDA, DynamoDB, S3, API
@@ -33,13 +33,17 @@ python3 final_test.py #프로그램 실행
 ```
 ### - 웹 서버
 ``` C
-#사용 방법 추가 필요
+/web/js/detail.js
+/web/js/main.js
 ```
+> API 생성 후 Js 내부에 API 추가하여 웹 동작
 ---
 ## 기능 설명
+### 전체 시스템 구성도
+<img src="./readmeIMG/전체구성도.png" width=800 height=auto>
+
 ### 1) 딥러닝 구현
 #### - LSTM 모델 구현
-* 프로젝트에서는 승객의 행동을 특징점을 잡아 분류해야함에 따라 CNN, LSTM 두가지 선택지가 있음<br>
 * 이미지만을 이용하기 보다 시간에 따른 행동을 시퀀스 데이터로 분류하기 적합한 LSTM 이용<br>
 * 58개의 데이터를 30개의 시퀀스로 입력, 5개의 레이블로 분류
 
@@ -76,10 +80,27 @@ python3 final_test.py #프로그램 실행
 ### 3) AWS
 <img src="./readmeIMG/image05.png" width=800 height=auto>
 
+#### AWS 설정
+* AWS IoT Core
+  - 사물 생성, 규칙 SQL 문 SELECT * FROM 'taxi/signal'을 통해 taxi/signal로 들어오는 TOPIC의 JSON값을 수신
+
+* AWS LAMBDA
+  - JSON 값의 Type을 판별하여 Motion 로그, location 좌표, 센싱 로그를 각각의 데이터 베이스로 저장할 수 있도록 알고리즘 설정
+  - 웹 서비스에서 API를 통해 사용할 수 있도록 DB의 로그값을 전송하는 알고리즘을 생성 
+
+* AWS DynamoDB
+  - Location 좌표, 딥러닝을 통해 탐지된 Motion 로그, Sensor의 동작 로그를 각각 저장할 수 있도록 DB 설정
+
+* AWS S3 Bucket
+  - 택시의 현재 상태 사진 및 위험 상황 발생 시 택시의 폭행 채증 영상이 저장될 수 있도록 라즈베리파이 코드상에서 알고리즘을 구현된 알고리즘을 통해 저장
+
+* AWS API
+  - 관리자 페이지 상에서 저장된 데이터 값, 택시의 현재 상태 사진 및 채증 영상을 직접 볼 수 있도록 API 연결 설정
+
 ### 4) 코드 구성도
 <img src="./readmeIMG/image06.png" width=800 height=auto>
 
-#### - Python 코드의 Multiprocessing 모듈을 사용
+#### Python 코드의 Multiprocessing 모듈을 사용
 * 사용 이유
   - GPS, Sensor, Motion detecting의 기능들은 지속해서 반복문을 통해 값을 읽어 오기 때문에 하나의 프로세스만으로는 동시에 3가지 기능의 정상적인 동작이 어려움, 이에 대처 방안으로 각 기능을 3개의 프로세스로 나누어 감지되는 데이터의 값을 type으로 분류하여 Queue를 통해 AWS로 값을 전달하도록 설정하였다.
 
