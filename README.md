@@ -115,7 +115,7 @@ python3 final_test.py #프로그램 실행
 ---
 ## 구현 화면
 ### 실제 기기 부착
-<img src="./readmeIMG/image01.png" width=800 height=auto>
+<img src="./readmeIMG/실제적용.png" width=800 height=auto>
 
 * 실제 차량에 내부 블랙박스 형식으로 부착하여 동작
 
